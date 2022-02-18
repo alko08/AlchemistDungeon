@@ -15,7 +15,21 @@ public class GameHandler : MonoBehaviour
             SceneDied = thisLevel;
         }
     }
+    public void StartGame() {
+        SceneManager.LoadScene("Level1");
+    }
 
+    public void RestartGame() {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame() {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
+        Application.Quit();
+        #endif
+    }
 
     public void ReplayGame (){
         SceneManager.LoadScene(SceneDied);
