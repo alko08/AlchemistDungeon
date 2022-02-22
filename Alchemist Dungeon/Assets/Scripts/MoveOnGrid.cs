@@ -14,7 +14,6 @@ public class MoveOnGrid : MonoBehaviour
     void Start()
     {
         movePoint.parent = null;
-        
     }
 
     // Update is called once per frame
@@ -24,15 +23,14 @@ public class MoveOnGrid : MonoBehaviour
                              movePoint.position, moveSpeed * Time.deltaTime);
                              
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
-        
-        
-            // move the movePoint to one space away in the intended direction
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, whatStopsMovement)) {
+                // if no collider on next square, then move there
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), .2f, whatStopsMovement)) {    
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                 }
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
+                // if no collider on next square, then move there
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), .2f, whatStopsMovement)) {
                     movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                 }
