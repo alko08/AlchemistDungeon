@@ -383,6 +383,7 @@ GameObject:
   - component: {fileID: 1209896574}
   - component: {fileID: 1209896570}
   - component: {fileID: 1209896572}
+  - component: {fileID: 1209896571}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -407,6 +408,27 @@ MonoBehaviour:
   whatStopsMovement:
     serializedVersion: 2
     m_Bits: 256
+--- !u!50 &1209896571
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1209896569}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!61 &1209896572
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -431,7 +453,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4, y: 4}
+  m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
 --- !u!4 &1209896574
 Transform:
@@ -503,7 +525,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!4 &1426715280
 Transform:
