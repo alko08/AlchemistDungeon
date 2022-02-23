@@ -39,34 +39,34 @@ public class MoveAnim : MonoBehaviour
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
-                    Debug.Log("Horizontal");
+                    // Debug.Log("Horizontal");
                     while (Physics2D.OverlapCircle(movePoint.position, 0f, slime)
                     && !Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
-                        Debug.Log("Horizontal Slime");
+                        // Debug.Log("Horizontal Slime");
                     }
                 }
-                if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
-                    Debug.Log("Stops Movement");
-                } else {
-                    Debug.Log("No Slime");
-                }
+                // if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
+                //     Debug.Log("Stops Movement");
+                // } else {
+                //     Debug.Log("No Slime");
+                // }
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
                     if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                        Debug.Log("Vertical");
+                        // Debug.Log("Vertical");
                         while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) 
                         && !Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                             movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                            Debug.Log("Vertical Slime");
+                            // Debug.Log("Vertical Slime");
                         }
                     }
-                    if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
-                        Debug.Log("Stops Movement");
-                    } else {
-                        Debug.Log("No Slime");
-                    }
+                    // if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
+                    //     Debug.Log("Stops Movement");
+                    // } else {
+                    //     Debug.Log("No Slime");
+                    // }
             }else {
                 // Debug.Log("Didnt Move");
             }
