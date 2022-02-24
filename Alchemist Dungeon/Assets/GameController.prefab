@@ -44,3 +44,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreTextObject: {fileID: 0}
+  pauseMenuUI: {fileID: 4401052124296881499, guid: d861dea6b2cd6de4e8af9884442ccfed, type: 3}
+  mixer: {fileID: 24100000, guid: c1791f9d5225b3f40b2c0ca70211ecb9, type: 2}

@@ -65,6 +65,7 @@ public class GameController : MonoBehaviour
     public void SetLevel (float sliderValue){
         mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
         volumeLevel = sliderValue;
+        Debug.Log(volumeLevel);
     }
 
     public void StartGame() {
