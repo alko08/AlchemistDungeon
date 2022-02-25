@@ -71,6 +71,10 @@ public class GameController : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadScene("Tutorial0");
     }
+    
+    public void PlayLevel1() {
+        SceneManager.LoadScene("Level1");
+    }
 
     public void RestartGame() {
         Time.timeScale = 1f;
