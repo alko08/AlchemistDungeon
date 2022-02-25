@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveAnim : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class MoveAnim : MonoBehaviour
     public Transform movePoint;
     public LayerMask whatStopsMovement;
     public LayerMask slime;
+    public LayerMask door;
     public Animator anim;
     private bool running;
     
@@ -33,7 +35,10 @@ public class MoveAnim : MonoBehaviour
             } else {
                 anim.SetBool("Walk", false);
             }
-            // Debug.Log("Stop");
+            
+            if (Physics2D.OverlapCircle(movePoint.position, 0f, door)) {
+                SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+            }
         
             // move the movePoint to one space away in the intended direction
             if (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f) {
