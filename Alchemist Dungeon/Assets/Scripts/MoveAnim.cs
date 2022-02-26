@@ -11,7 +11,9 @@ public class MoveAnim : MonoBehaviour
     public LayerMask slime;
     public LayerMask door;
     public Animator anim;
-    private bool running;
+    private bool moving;
+    private bool sliding;
+    private bool canExit;
     
     
     // Start is called before the first frame update
@@ -19,8 +21,18 @@ public class MoveAnim : MonoBehaviour
     {
         movePoint.parent = null;
         anim.SetBool("Walk", false);
-        anim.SetBool("Right", true);
-        running = false;
+        anim.SetBool("Slide", false);
+        anim.SetBool("Up", true);
+        anim.SetBool("Down", false);
+        anim.SetBool("Right", false);
+        anim.SetBool("Left", false);
+        moving = false;
+        sliding = false;
+        canExit = false;
+    }
+
+    public void CanExit() {
+        canExit = true;
     }
 
     // Update is called once per frame
@@ -30,13 +42,16 @@ public class MoveAnim : MonoBehaviour
                              movePoint.position, moveSpeed * Time.deltaTime);
                              
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
-            if (running) {
-                running = false;
+            if (moving) {
+                moving = false;
+                sliding = false;
             } else {
                 anim.SetBool("Walk", false);
+                anim.SetBool("Slide", false);
             }
-            
-            if (Physics2D.OverlapCircle(movePoint.position, 0f, door)) {
+
+            // 
+            if (canExit && Physics2D.OverlapCircle(movePoint.position, 0f, door)) {
                 SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
             }
         
@@ -51,38 +66,45 @@ public class MoveAnim : MonoBehaviour
                         // Debug.Log("Horizontal Slime");
                     }
                 }
-                // if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
-                //     Debug.Log("Stops Movement");
-                // } else {
-                //     Debug.Log("No Slime");
-                // }
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
-                    if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
+                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
+                    movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                    // Debug.Log("Vertical");
+                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) 
+                    && !Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                        // Debug.Log("Vertical");
-                        while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) 
-                        && !Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
-                            movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
-                            // Debug.Log("Vertical Slime");
-                        }
+                        // Debug.Log("Vertical Slime");
                     }
-                    // if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
-                    //     Debug.Log("Stops Movement");
-                    // } else {
-                    //     Debug.Log("No Slime");
-                    // }
-            }else {
-                // Debug.Log("Didnt Move");
+                }
             }
-        } else {
-            // Debug.Log("Walk");
-            running = true;
+        } else { // Animate Movement
+            moving = true;
+            sliding = sliding || Vector3.Distance(transform.position, movePoint.position) > 1f;
+            anim.SetBool("Slide", sliding);
             anim.SetBool("Walk", true);
+
+            // Debug.Log("Walk");
             if(Input.GetAxisRaw("Horizontal") > 0f) {
+                anim.SetBool("Up", false);
+                anim.SetBool("Down", false);
                 anim.SetBool("Right", true);
+                anim.SetBool("Left", false);
             } else if(Input.GetAxisRaw("Horizontal") < 0f) {
+                anim.SetBool("Up", false);
+                anim.SetBool("Down", false);
                 anim.SetBool("Right", false);
+                anim.SetBool("Left", true);
+            } else if (Input.GetAxisRaw("Vertical") > 0f) {
+                anim.SetBool("Up", true);
+                anim.SetBool("Down", false);
+                anim.SetBool("Right", false);
+                anim.SetBool("Left", false);
+            } else if (Input.GetAxisRaw("Vertical") < 0f) {
+                anim.SetBool("Up", false);
+                anim.SetBool("Down", true);
+                anim.SetBool("Right", false);
+                anim.SetBool("Left", false);
             }
         }
     }
