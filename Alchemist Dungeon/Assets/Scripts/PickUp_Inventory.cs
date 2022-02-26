@@ -18,7 +18,7 @@ public class PickUp_Inventory: MonoBehaviour {
                   //Debug.Log("You found an" + ItemName);
                   playerInventory.InventoryAdd(ItemName);
                   //playerInventory.removeObjectFromLevel(ItemName);
-                  //Destroy(gameObject);
+                  Destroy(gameObject);
             }
       }
 }
