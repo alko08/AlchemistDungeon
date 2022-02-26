@@ -1,10 +1,11 @@
-using System.Collections.Generic;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour{
+public class PickUp : MonoBehaviour
+{
 
-      public GameHandler gameHandler;
+      public InventoryHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isHealthPickUp = true;
       public bool isSpeedBoostPickUp = false;
@@ -14,7 +15,7 @@ public class PickUp : MonoBehaviour{
       public float speedTime = 2f;
 
       void Start(){
-            gameHandler = GameObject.FindWithTag("InventoryHandler").GetComponent<GameHandler>();
+            gameHandler = GameObject.FindWithTag("InventoryHandler").GetComponent<InventoryHandler>();
             //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
       }
 
