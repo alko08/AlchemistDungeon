@@ -14,6 +14,8 @@ public class GameInventory : MonoBehaviour {
       public static bool item4bool = false;
       public static bool item5bool = false;
       public static bool item6bool = false;
+
+      public static bool potion1bool = false;
       
       // public static int coins = 0;
 
@@ -23,6 +25,12 @@ public class GameInventory : MonoBehaviour {
       public GameObject item4image;
       public GameObject item5image;
       public GameObject item6image;
+
+      public GameObject potion1image;
+
+      // Recipes
+      public static bool canCraft1 = false;
+
     //   public GameObject coinText;
 
       void Start(){
@@ -33,6 +41,8 @@ public class GameInventory : MonoBehaviour {
             item4image.SetActive(false);
             item5image.SetActive(false);
             item6image.SetActive(false);
+
+            potion1image.SetActive(false);
             InventoryDisplay();
       }
 
@@ -44,6 +54,7 @@ public class GameInventory : MonoBehaviour {
             if (item5bool == true) {item5image.SetActive(true);} else {item5image.SetActive(false);}
             if (item6bool == true) {item6image.SetActive(true);} else {item6image.SetActive(false);}
 
+            if (potion1bool == true) {potion1image.SetActive(true);} else {potion1image.SetActive(false);}
             // Text coinTextB = coinText.GetComponent<Text>();
             // coinTextB.text = ("COINS: " + coins);
       }
@@ -57,6 +68,11 @@ public class GameInventory : MonoBehaviour {
             else if (foundItemName == "item5") {item5bool = true;}
             else if (foundItemName == "item6") {item6bool = true;}
             InventoryDisplay();
+
+            // Updating canCraft bools
+            if ((item1bool) && (item2bool) && (item3bool)) {
+                  canCraft1 = true;
+            }
       }
 
       public void InventoryRemove(string item){
@@ -74,4 +90,18 @@ public class GameInventory : MonoBehaviour {
     //         coins +=amount;
     //         InventoryDisplay();
     //   }
+
+    public void Craft1()
+    {
+            item1bool = false;
+            item2bool = false;
+            item3bool = false;
+
+            item1image.SetActive(false);
+            item2image.SetActive(false);
+            item3image.SetActive(false);
+
+            potion1bool = true;
+            InventoryDisplay();
+    }
 }
