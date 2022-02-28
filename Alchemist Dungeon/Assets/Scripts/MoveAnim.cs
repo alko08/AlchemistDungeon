@@ -67,7 +67,8 @@ public class MoveAnim : MonoBehaviour
             }
         } else { // Animate Movement
             moving = true;
-            sliding = sliding || Vector3.Distance(transform.position, movePoint.position) > 1f;
+            sliding = sliding || Vector3.Distance(transform.position, movePoint.position) > 1.5f;
+            // Debug.Log(Vector3.Distance(transform.position, movePoint.position));
             anim.SetBool("Slide", sliding);
             anim.SetBool("Walk", true);
 
