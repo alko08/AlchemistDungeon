@@ -29,7 +29,7 @@ public class GameInventory : MonoBehaviour {
       public GameObject potion1image;
 
       // Recipes
-      public static bool canCraft1 = false;
+      public bool canCraft1;
 
     //   public GameObject coinText;
 
@@ -43,6 +43,8 @@ public class GameInventory : MonoBehaviour {
             item6image.SetActive(false);
 
             potion1image.SetActive(false);
+            canCraft1 = false;
+
             InventoryDisplay();
       }
 

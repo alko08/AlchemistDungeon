@@ -5,21 +5,24 @@ using UnityEngine.UI;
 
 public class cauldronScript : MonoBehaviour
 {
-    // Pseudo.
-    // If collides with player and canCraft is true, remove ingredients from
-    // player's inventory and add a potion.
-
     public GameController gameHandler;
+    public GameInventory inventory;
 
-    void Start(){
+    void Start()
+    {
+        // Finding the inventory GameController.
         gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameController>();
+        
+        // Finding the inventory script contained by the GameController.
+        inventory = GameObject.FindWithTag("GameHandler").GetComponent<GameInventory>();
     }
 
-    public void OnTrigger(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if ((other.gameObject.tag == "Player") && (gameHandler.canCraft1))
+        // If it collides with the player and canCraft is true, call Craft1() in inventory.
+        if ((other.gameObject.tag == "Player") && (inventory.canCraft1 == true))
         {
-            gameHandler.Craft1();
+            inventory.Craft1();
         }
     }
 }
