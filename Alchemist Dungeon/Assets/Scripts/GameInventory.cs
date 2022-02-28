@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameInventory : MonoBehaviour {
 
       //6 Inventory Items:
-      public GameObject InventoryMenu;
+      // public GameObject InventoryMenu;
 
       public static bool item1bool = false;
       public static bool item2bool = false;
@@ -31,10 +31,13 @@ public class GameInventory : MonoBehaviour {
       // Recipes
       public bool canCraft1;
 
+      // Enable Next Level
+      private DoorExit door;
+
     //   public GameObject coinText;
 
       void Start(){
-            InventoryMenu.SetActive(true);
+            // InventoryMenu.SetActive(true);
             item1image.SetActive(false);
             item2image.SetActive(false);
             item3image.SetActive(false);
@@ -46,6 +49,8 @@ public class GameInventory : MonoBehaviour {
             canCraft1 = false;
 
             InventoryDisplay();
+
+            door = GameObject.FindWithTag("Door").GetComponent<DoorExit>();
       }
 
       void InventoryDisplay(){
@@ -105,5 +110,7 @@ public class GameInventory : MonoBehaviour {
 
             potion1bool = true;
             InventoryDisplay();
+
+            door.EnableExit();
     }
 }

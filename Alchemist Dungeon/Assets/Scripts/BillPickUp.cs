@@ -5,7 +5,7 @@ using UnityEngine;
 public class BillPickUp : MonoBehaviour
 {
 
-      public GameController gameHandler;
+      private GameController gameHandler;
       // public Object inventoryItem;
       //public playerVFX playerPowerupVFX; 
       // public bool isHealthPickUp = true;

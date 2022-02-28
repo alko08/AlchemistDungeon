@@ -7,6 +7,8 @@ TagManager:
   - item
   - PauseMenuSlider
   - GameHandler
+  - Slime
+  - Door
   layers:
   - Default
   - TransparentFX

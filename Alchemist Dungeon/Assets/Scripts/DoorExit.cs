@@ -7,6 +7,18 @@ public class DoorExit : MonoBehaviour
 {
     public bool canExit = false;
     public LayerMask Player;
+    public GameObject OpenDoor;
+    public GameObject ClosedDoor;
+    // private GameObject slime;
+
+    void Start()
+    {
+        if (!canExit) {
+            OpenDoor.SetActive(false);
+            ClosedDoor.SetActive(true);
+            // slime = GameObject.FindWithTag("Slime");
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -18,5 +30,8 @@ public class DoorExit : MonoBehaviour
 
     public void EnableExit() {
         canExit = true;
+        OpenDoor.SetActive(true);
+        ClosedDoor.SetActive(false);
+        // slime.SetActive(false);
     }
 }

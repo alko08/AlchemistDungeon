@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class cauldronScript : MonoBehaviour
 {
-    public GameController gameHandler;
-    public GameInventory inventory;
+    private GameController gameHandler;
+    private GameInventory inventory;
 
     void Start()
     {

@@ -23,6 +23,8 @@ public class ChatBubble : MonoBehaviour
             StartCoroutine(Tutorial0Coroutine());
         } else if (SceneManager.GetActiveScene().name == "Tutorial1") {
             StartCoroutine(Tutorial1Coroutine());
+        } else if (SceneManager.GetActiveScene().name == "Tutorial2") {
+            StartCoroutine(Tutorial2Coroutine());
         }
         
     }
@@ -53,6 +55,15 @@ public class ChatBubble : MonoBehaviour
         Setup("OH NO! THE SLIMES GOT LOOSE AGAIN!");
         yield return new WaitForSeconds(3.5f);
         Setup("Be careful of the slippery slime!");
+        Destroy(gameObject, 5f);
+    }
+
+    IEnumerator Tutorial2Coroutine() {
+        yield return new WaitForSeconds(1f);
+        Show();
+        Setup("I got to make a potion to clean up this mess...");
+        yield return new WaitForSeconds(3f);
+        Setup("Collect every ingredient and then use the cauldron.");
         Destroy(gameObject, 5f);
     }
 

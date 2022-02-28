@@ -19,7 +19,7 @@ public class PickMeUp : MonoBehaviour
 
       private void OnTriggerEnter2D(Collider2D other){
             if (other.tag == "Player"){
-                  gameController.AddScore (scoreValue); // add it to the HUD
+                  // gameController.AddScore (scoreValue); // add it to the HUD
                   Destroy(gameObject);
             }
       }

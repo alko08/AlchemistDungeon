@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUp_Inventory: MonoBehaviour {
 
-      public GameInventory playerInventory;
+      private GameInventory playerInventory;
       public string ItemName = "item1";
 
       void Awake(){
