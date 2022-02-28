@@ -3899,7 +3899,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerObject: {fileID: 1928023237}
-  moveSpeed: 2.5
+  moveSpeed: 3
   movePoint: {fileID: 1318506240}
 --- !u!4 &998101521
 Transform:

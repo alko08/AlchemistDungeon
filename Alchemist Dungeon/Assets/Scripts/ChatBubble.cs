@@ -53,8 +53,6 @@ public class ChatBubble : MonoBehaviour
         Setup("OH NO! THE SLIMES GOT LOOSE AGAIN!");
         yield return new WaitForSeconds(3.5f);
         Setup("Be careful of the slippery slime!");
-        yield return new WaitForSeconds(5f);
-        Setup("You can't stop sliding until you run out of slime or hit a wall.");
         Destroy(gameObject, 5f);
     }
 
