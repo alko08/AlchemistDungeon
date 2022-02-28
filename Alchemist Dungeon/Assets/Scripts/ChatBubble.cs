@@ -8,6 +8,9 @@ public class ChatBubble : MonoBehaviour
 {
     private SpriteRenderer backgroundSpriteRenderer;
     private TextMeshPro textMeshPro;
+    public GameObject text;
+    public GameObject background;
+
     private void Awake() {
         backgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
         textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
@@ -15,6 +18,7 @@ public class ChatBubble : MonoBehaviour
 
     private void Start() {
         Setup("hi");
+        Hide();
         if (SceneManager.GetActiveScene().name == "Tutorial0") {
             StartCoroutine(Tutorial0Coroutine());
         } else if (SceneManager.GetActiveScene().name == "Tutorial1") {
@@ -23,19 +27,33 @@ public class ChatBubble : MonoBehaviour
         
     }
 
+    private void Hide() {
+        text.SetActive(false);
+        background.SetActive(false);
+    }
+
+    private void Show() {
+        text.SetActive(true);
+        background.SetActive(true);
+    }
+
     IEnumerator Tutorial0Coroutine() {
+        yield return new WaitForSeconds(1f);
+        Show();
         Setup("Home sweet home.");
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3f);
         Setup("To move press WASD or the Arrow Keys.");
         yield return new WaitUntil(() => (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f));
         Destroy(gameObject, 3f);
     }
 
     IEnumerator Tutorial1Coroutine() {
+        yield return new WaitForSeconds(1f);
+        Show();
         Setup("OH NO! THE SLIMES GOT LOOSE AGAIN!");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3.5f);
         Setup("Be careful of the slippery slime!");
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(5f);
         Setup("You can't stop sliding until you run out of slime or hit a wall.");
         Destroy(gameObject, 5f);
     }

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MoveAnim : MonoBehaviour
 {
@@ -9,11 +8,9 @@ public class MoveAnim : MonoBehaviour
     public Transform movePoint;
     public LayerMask whatStopsMovement;
     public LayerMask slime;
-    public LayerMask door;
     public Animator anim;
     private bool moving;
     private bool sliding;
-    private bool canExit;
     
     
     // Start is called before the first frame update
@@ -28,11 +25,6 @@ public class MoveAnim : MonoBehaviour
         anim.SetBool("Left", false);
         moving = false;
         sliding = false;
-        canExit = false;
-    }
-
-    public void CanExit() {
-        canExit = true;
     }
 
     // Update is called once per frame
@@ -48,11 +40,6 @@ public class MoveAnim : MonoBehaviour
             } else {
                 anim.SetBool("Walk", false);
                 anim.SetBool("Slide", false);
-            }
-
-            // 
-            if (canExit && Physics2D.OverlapCircle(movePoint.position, 0f, door)) {
-                SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
             }
         
             // move the movePoint to one space away in the intended direction

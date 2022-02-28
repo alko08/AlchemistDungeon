@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3722931446078901444}
   - component: {fileID: 126638229539221168}
   - component: {fileID: 4495390910846264714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: playerArt2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 5365207893607829494}
   - component: {fileID: 5365207893607829495}
   - component: {fileID: 5365207893607829488}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5365207894779394395}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: movePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
