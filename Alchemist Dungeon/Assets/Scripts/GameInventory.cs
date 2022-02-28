@@ -30,6 +30,9 @@ public class GameInventory : MonoBehaviour {
 
       // Recipes
       public bool canCraft1;
+      public bool canCraft2;
+      public bool canCraft3;
+      public bool canCraft4;
 
       // Enable Next Level
       private DoorExit door;
@@ -107,6 +110,66 @@ public class GameInventory : MonoBehaviour {
             item1image.SetActive(false);
             item2image.SetActive(false);
             item3image.SetActive(false);
+
+            potion1bool = true;
+            InventoryDisplay();
+
+            door.EnableExit();
+    }
+
+    public void Craft2()
+    {
+            item1bool = false;
+            item2bool = false;
+            item3bool = false;
+            item4bool = false;
+
+            item1image.SetActive(false);
+            item2image.SetActive(false);
+            item3image.SetActive(false);
+            item4image.SetActive(false);
+
+            potion1bool = true;
+            InventoryDisplay();
+
+            door.EnableExit();
+    }
+
+    public void Craft3()
+    {
+            item1bool = false;
+            item2bool = false;
+            item3bool = false;
+            item4bool = false;
+            item5bool = false;
+
+            item1image.SetActive(false);
+            item2image.SetActive(false);
+            item3image.SetActive(false);
+            item4image.SetActive(false);
+            item5image.SetActive(false);
+
+            potion1bool = true;
+            InventoryDisplay();
+
+            door.EnableExit();
+    }
+
+    public void Craft4()
+    {
+            item1bool = false;
+            item2bool = false;
+            item3bool = false;
+            item4bool = false;
+            item5bool = false;
+            item6bool = false;
+
+            item1image.SetActive(false);
+            item2image.SetActive(false);
+            item3image.SetActive(false);
+            item4image.SetActive(false);
+            item5image.SetActive(false);
+            item6image.SetActive(false);
 
             potion1bool = true;
             InventoryDisplay();

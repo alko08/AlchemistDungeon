@@ -23,6 +23,15 @@ public class cauldronScript : MonoBehaviour
         if ((other.gameObject.tag == "Player") && (inventory.canCraft1 == true))
         {
             inventory.Craft1();
+        } else if ((other.gameObject.tag == "Player") && (inventory.canCraft2 == true))
+        {
+            inventory.Craft2();
+        } else if ((other.gameObject.tag == "Player") && (inventory.canCraft3 == true))
+        {
+            inventory.Craft3();
+        } else if ((other.gameObject.tag == "Player") && (inventory.canCraft4 == true))
+        {
+            inventory.Craft4();
         }
     }
 }
