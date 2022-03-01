@@ -33,6 +33,7 @@ public class GameInventory : MonoBehaviour {
       public bool canCraft2;
       public bool canCraft3;
       public bool canCraft4;
+      public int recipeNum = 1;
 
       // Enable Next Level
       private DoorExit door;
@@ -49,7 +50,7 @@ public class GameInventory : MonoBehaviour {
             item6image.SetActive(false);
 
             potion1image.SetActive(false);
-            canCraft1 = false;
+            CantCraft();
 
             InventoryDisplay();
 
@@ -80,8 +81,17 @@ public class GameInventory : MonoBehaviour {
             InventoryDisplay();
 
             // Updating canCraft bools
-            if ((item1bool) && (item2bool) && (item3bool)) {
+            if (item1bool && item2bool && item3bool) {
                   canCraft1 = true;
+            }
+            if (canCraft1 && item4bool) {
+                  canCraft2 = true;
+            }
+            if (canCraft2 && item5bool) {
+                  canCraft3 = true;
+            }
+            if (canCraft3 && item6bool) {
+                  canCraft4 = true;
             }
       }
 
@@ -101,6 +111,13 @@ public class GameInventory : MonoBehaviour {
     //         InventoryDisplay();
     //   }
 
+    private void CantCraft() {
+            canCraft1 = false;
+            canCraft2 = false;
+            canCraft3 = false;
+            canCraft4 = false;
+    }
+
     public void Craft1()
     {
             item1bool = false;
@@ -112,6 +129,7 @@ public class GameInventory : MonoBehaviour {
             item3image.SetActive(false);
 
             potion1bool = true;
+            CantCraft();
             InventoryDisplay();
 
             door.EnableExit();
@@ -130,6 +148,7 @@ public class GameInventory : MonoBehaviour {
             item4image.SetActive(false);
 
             potion1bool = true;
+            CantCraft();
             InventoryDisplay();
 
             door.EnableExit();
@@ -150,6 +169,7 @@ public class GameInventory : MonoBehaviour {
             item5image.SetActive(false);
 
             potion1bool = true;
+            CantCraft();
             InventoryDisplay();
 
             door.EnableExit();
@@ -172,6 +192,7 @@ public class GameInventory : MonoBehaviour {
             item6image.SetActive(false);
 
             potion1bool = true;
+            CantCraft();
             InventoryDisplay();
 
             door.EnableExit();

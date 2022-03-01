@@ -9,6 +9,7 @@ TagManager:
   - GameHandler
   - Slime
   - Door
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

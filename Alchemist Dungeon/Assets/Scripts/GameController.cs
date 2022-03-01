@@ -12,13 +12,14 @@ public class GameController : MonoBehaviour
     // public GameObject scoreTextObject;
     // private bool gameOver;
     public static bool GameisPaused = false;
-    public GameObject pauseMenuUI;
+    private GameObject pauseMenuUI;
     public AudioMixer mixer;
     public static float volumeLevel = 1.0f;
     private Slider sliderVolumeCtrl;
 
     // Start is called before the first frame update
     void Start (){
+        pauseMenuUI = GameObject.FindWithTag("PauseMenu");
         pauseMenuUI.SetActive(false);
         string thisLevel = SceneManager.GetActiveScene().name;
         // gameOver = false;
