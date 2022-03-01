@@ -7365,6 +7365,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6157150776796875148, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
   m_PrefabInstance: {fileID: 1090017567}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1090017569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5208362856293378708, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 1090017567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1163493973
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8810,7 +8815,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 23
-      m_TileSpriteIndex: 14
+      m_TileSpriteIndex: 29
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9180,7 +9185,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 14
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -9529,8 +9534,8 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
-  - m_RefCount: 1
-    m_Data: {fileID: -8059745354644541018, guid: 637830d69537146e0a9729f73a2a1564, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -3087015921588768231, guid: 637830d69537146e0a9729f73a2a1564, type: 3}
   - m_RefCount: 2
@@ -9558,7 +9563,7 @@ Tilemap:
   - m_RefCount: 7
     m_Data: {fileID: 2713158157685727869, guid: 637830d69537146e0a9729f73a2a1564, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 3905401844521720002, guid: 41be99f72fd143c43b80457867b90cba, type: 3}
+    m_Data: {fileID: -8059745354644541018, guid: 637830d69537146e0a9729f73a2a1564, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1484201860590947727, guid: 637830d69537146e0a9729f73a2a1564, type: 3}
   - m_RefCount: 1
@@ -9587,8 +9592,8 @@ Tilemap:
     m_Data: {fileID: 1507071610719829598, guid: 342d2f6511d34144b90ffb07cb12d2fe, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 3728910705413155212, guid: 637830d69537146e0a9729f73a2a1564, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 3905401844521720002, guid: 41be99f72fd143c43b80457867b90cba, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 125
     m_Data:
@@ -9646,6 +9651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3048371696874760319, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 1090017569}
     - target: {fileID: 8657225345206865505, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
       propertyPath: m_RootOrder
       value: 5

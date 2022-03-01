@@ -403,6 +403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameController
       objectReference: {fileID: 0}
+    - target: {fileID: 3048371696874760319, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 2079041437}
     - target: {fileID: 8657225345206865505, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -9698,6 +9702,11 @@ GameObject:
 --- !u!1 &2079041436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6157150776788693731, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 2079041430}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2079041437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5208362856293378708, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
   m_PrefabInstance: {fileID: 2079041430}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4983217520329279218
