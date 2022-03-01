@@ -812,7 +812,7 @@ PrefabInstance:
     - target: {fileID: 5934875430840195975, guid: 6d6b2dce9cf5ddf4b88bda434c51c817, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3048371696874760319, guid: 67192748e536d924182cf9f1cb6e74b8, type: 3}
+      objectReference: {fileID: 3048371696874760319, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
     - target: {fileID: 5934875430840195975, guid: 6d6b2dce9cf5ddf4b88bda434c51c817, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
@@ -838,7 +838,7 @@ PrefabInstance:
     - target: {fileID: 3857044306038769912, guid: 1ad89cb3bc32748449eb03ab03afbe01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3048371696874760319, guid: 67192748e536d924182cf9f1cb6e74b8, type: 3}
+      objectReference: {fileID: 3048371696874760319, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
     - target: {fileID: 3857044306038769912, guid: 1ad89cb3bc32748449eb03ab03afbe01, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: QuitGame
@@ -944,7 +944,7 @@ PrefabInstance:
     - target: {fileID: 193613040874405435, guid: 3f5a4ef32b50c3d4989fa9ee8580453e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 3048371696874760319, guid: 67192748e536d924182cf9f1cb6e74b8, type: 3}
+      objectReference: {fileID: 3048371696874760319, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
     - target: {fileID: 193613040874405435, guid: 3f5a4ef32b50c3d4989fa9ee8580453e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: RestartGame
