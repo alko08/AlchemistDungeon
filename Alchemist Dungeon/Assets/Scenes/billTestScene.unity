@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3510178736812453765, guid: 5538d0e4d275b460694cc4079fac685b, type: 3}
+      propertyPath: m_TagString
+      value: highlighted
+      objectReference: {fileID: 0}
     - target: {fileID: 5459848691208814707, guid: 5538d0e4d275b460694cc4079fac685b, type: 3}
       propertyPath: m_Name
       value: testRoom

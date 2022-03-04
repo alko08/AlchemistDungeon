@@ -10,6 +10,7 @@ TagManager:
   - Slime
   - Door
   - PauseMenu
+  - highlighted
   layers:
   - Default
   - TransparentFX
