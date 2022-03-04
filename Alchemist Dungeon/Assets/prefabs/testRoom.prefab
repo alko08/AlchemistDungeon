@@ -14,10 +14,9 @@ GameObject:
   - component: {fileID: 2775850605738393660}
   - component: {fileID: 4690499442488201349}
   - component: {fileID: 5209296352699047099}
-  - component: {fileID: 947669074891074798}
   m_Layer: 8
   m_Name: cauldron_glowing
-  m_TagString: Untagged
+  m_TagString: highlighted
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,18 +303,6 @@ CompositeCollider2D:
     m_Paths: []
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
---- !u!114 &947669074891074798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3510178736812453765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f35c03eadfecf41af9680e9718592aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4481491173414107499
 GameObject:
   m_ObjectHideFlags: 0

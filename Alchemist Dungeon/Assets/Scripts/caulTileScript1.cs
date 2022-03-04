@@ -6,9 +6,11 @@ public class caulTileScript1 : MonoBehaviour
 {
     private GameController gameHandler;
     private GameInventory inventory;
+    private GameObject glowCauldron;
 
     // On start, find the inventory manager and assign it to a variable you
-    // can reference.
+    // can reference. Also find the glowing cauldron so you can set it active
+    // when canCraft1 == true.
     void Start()
     {
         // Finding the inventory GameController.
@@ -16,37 +18,19 @@ public class caulTileScript1 : MonoBehaviour
         
         // Finding the inventory script contained by the GameController.
         inventory = GameObject.FindWithTag("GameHandler").GetComponent<GameInventory>();
+
+        // Finding glowingCauldron before making it invisible.
+        glowCauldron = GameObject.FindWithTag("highlighted");
+        glowCauldron.gameObject.SetActive(false);
     }
 
     // If any of the recipes can be crafted, make invisible. Else, make visible.
     void Update()
     {
-        if (inventory.canCraft1 == true && inventory.recipeNum == 1)
+        if (inventory.canCraft1 == true)
         {
             this.gameObject.SetActive(false);
-        } else {
-            this.gameObject.SetActive(true);
-        }
-
-        if (inventory.canCraft2 == true && inventory.recipeNum == 2)
-        {
-            this.gameObject.SetActive(false);
-        } else {
-            this.gameObject.SetActive(true);
-        }
-
-        if (inventory.canCraft3 == true && inventory.recipeNum == 3)
-        {
-            this.gameObject.SetActive(false);
-        } else {
-            this.gameObject.SetActive(true);
-        }
-
-        if (inventory.canCraft4 == true && inventory.recipeNum == 4)
-        {
-            this.gameObject.SetActive(false);
-        } else {
-            this.gameObject.SetActive(true);
+            glowCauldron.gameObject.SetActive(true);
         }
     }
 }
