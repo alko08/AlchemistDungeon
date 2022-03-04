@@ -10,6 +10,8 @@ public class ChatBubble : MonoBehaviour
     private TextMeshPro textMeshPro;
     public GameObject text;
     public GameObject background;
+    public GameObject EButton;
+    private bool showE = true;
 
     private void Awake() {
         backgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
@@ -32,51 +34,70 @@ public class ChatBubble : MonoBehaviour
     private void Hide() {
         text.SetActive(false);
         background.SetActive(false);
+        EButton.SetActive(false);
     }
 
     private void Show() {
         text.SetActive(true);
         background.SetActive(true);
+        EButton.SetActive(showE);
     }
 
     IEnumerator Tutorial0Coroutine() {
         yield return new WaitForSeconds(1f);
-        Show();
         Setup("Home sweet home.");
-        yield return new WaitForSeconds(3f);
-        Setup("To move press WASD or the Arrow Keys.");
-        yield return new WaitUntil(() => (Mathf.Abs(Input.GetAxisRaw("Horizontal")) == 1f || Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f));
-        Destroy(gameObject, 3f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        // Setup("To move press WASD or the Arrow Keys.");
+        // yield return new WaitForSeconds(.5f);
+        // yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Destroy(gameObject);
     }
 
     IEnumerator Tutorial1Coroutine() {
+        
         yield return new WaitForSeconds(1f);
-        Show();
+        showE = false;
         Setup("OH NO! THE SLIMES GOT LOOSE AGAIN!");
-        yield return new WaitForSeconds(3.5f);
-        Setup("Be careful of the slippery slime!");
-        Destroy(gameObject, 5f);
+        yield return new WaitForSeconds(2.3f);
+        showE = true;
+        Setup("OH NO! THE SLIMES GOT LOOSE AGAIN!");
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Setup("I got to follow that slime!");
+        yield return new WaitForSeconds(.5f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Destroy(gameObject);
     }
 
     IEnumerator Tutorial2Coroutine() {
         yield return new WaitForSeconds(1f);
-        Show();
         Setup("I got to make a potion to clean up this mess...");
-        yield return new WaitForSeconds(3f);
-        Setup("Collect every ingredient and then use the cauldron.");
-        Destroy(gameObject, 5f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Setup("Collect every ingredient and then use the cauldron!");
+        yield return new WaitForSeconds(.5f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Destroy(gameObject);
     }
 
     private void Setup(string text) {
+        Show();
         textMeshPro.SetText(text);
         textMeshPro.ForceMeshUpdate();
         Vector2 textSize = textMeshPro.GetRenderedValues(false);
-        
+
         Vector2 padding = new Vector2(.5f,.5f);
+        if (showE) {
+            padding = new Vector2(1.25f,.5f);
+        }
+        
         backgroundSpriteRenderer.size = textSize + padding;
 
         Vector3 offset = new Vector3(-.8f, 0f);
         backgroundSpriteRenderer.transform.localPosition = 
         new Vector3(backgroundSpriteRenderer.size.x / 2f, 0f) + offset;
+        
+        offset = new Vector3(-1.4f, 0f);
+        EButton.transform.localPosition =
+        new Vector3(backgroundSpriteRenderer.size.x, 0f) + offset;
+        
     }
 }
