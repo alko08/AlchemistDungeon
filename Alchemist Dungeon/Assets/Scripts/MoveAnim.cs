@@ -11,6 +11,7 @@ public class MoveAnim : MonoBehaviour
     public Animator anim;
     private bool moving;
     private bool sliding;
+    private bool hitWall;
     
     
     // Start is called before the first frame update
@@ -25,6 +26,7 @@ public class MoveAnim : MonoBehaviour
         anim.SetBool("Left", false);
         moving = false;
         sliding = false;
+        hitWall = false;
     }
 
     // Update is called once per frame
@@ -34,6 +36,11 @@ public class MoveAnim : MonoBehaviour
                              movePoint.position, moveSpeed * Time.deltaTime);
                              
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
+            if (hitWall) {
+                FindObjectOfType<AudioManager>().Play("Thud");
+                hitWall = false;
+            }
+
             if (moving) {
                 moving = false;
                 sliding = false;
@@ -50,9 +57,16 @@ public class MoveAnim : MonoBehaviour
                     while (Physics2D.OverlapCircle(movePoint.position, 0f, slime)
                     && !Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                         movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
+                        sliding = true;
                         // Debug.Log("Horizontal Slime");
+                        if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
+                            hitWall = true;
+                        }
                     }
+                }else {
+                    hitWall = true;
                 }
+                
             }
             else if (Mathf.Abs(Input.GetAxisRaw("Vertical")) == 1f) {
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
@@ -61,13 +75,19 @@ public class MoveAnim : MonoBehaviour
                     while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) 
                     && !Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                         movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
+                        sliding = true;
                         // Debug.Log("Vertical Slime");
+                        if (Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
+                            hitWall = true;
+                        }
                     }
+                } else {
+                    hitWall = true;
                 }
+                
             }
         } else { // Animate Movement
             moving = true;
-            sliding = sliding || Vector3.Distance(transform.position, movePoint.position) > 1.5f;
             // Debug.Log(Vector3.Distance(transform.position, movePoint.position));
             anim.SetBool("Slide", sliding);
             anim.SetBool("Walk", true);
