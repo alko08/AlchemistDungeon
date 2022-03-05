@@ -37,7 +37,7 @@ public class MoveAnim : MonoBehaviour
                              
         if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
             if (hitWall) {
-                //play sound FOR ADAM!!!!!!!!!!!!!!!!!!!!
+                FindObjectOfType<AudioManager>().Play("Thud");
                 hitWall = false;
             }
 
@@ -60,7 +60,7 @@ public class MoveAnim : MonoBehaviour
                         // Debug.Log("Horizontal Slime");
                     }
                 }
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
+                if (Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                     hitWall = true;
                 }
             }
@@ -74,7 +74,7 @@ public class MoveAnim : MonoBehaviour
                         // Debug.Log("Vertical Slime");
                     }
                 }
-                if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
+                if (Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                     hitWall = true;
                 }
             }
