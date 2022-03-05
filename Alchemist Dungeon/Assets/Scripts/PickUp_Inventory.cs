@@ -15,6 +15,7 @@ public class PickUp_Inventory: MonoBehaviour {
 
       void OnTriggerEnter2D(Collider2D other){
             if (other.gameObject.tag == "Player"){
+                  FindObjectOfType<AudioManager>().Play("MajorPickup");
                   //Debug.Log("You found an" + ItemName);
                   playerInventory.InventoryAdd(ItemName);
                   //playerInventory.removeObjectFromLevel(ItemName);
