@@ -20,10 +20,17 @@ public class DoorExit : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (canExit && Physics2D.OverlapCircle(transform.position, 0f, Player)) {
+    // Update is called once per frame. NO LONGER NEEDED, uses Trigger now.
+    // void Update()
+    // {
+    //     Debug.Log(canExit + " = " + Physics2D.OverlapCircle(transform.position, 0f, Player));
+    //     if (canExit && Physics2D.OverlapCircle(transform.position, 0f, Player)) {
+    //         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    //     }
+    // }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.tag == "Player" && canExit){
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
