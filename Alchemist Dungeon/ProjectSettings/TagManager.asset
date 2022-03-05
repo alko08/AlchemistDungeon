@@ -12,6 +12,7 @@ TagManager:
   - PauseMenu
   - highlighted
   - Holes
+  - PlayerController
   layers:
   - Default
   - TransparentFX

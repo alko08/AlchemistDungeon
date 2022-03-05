@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial2.unity
     guid: 3526b7c52fcd643409a1a7d3a8e1e07e
   - enabled: 1
+    path: Assets/Scenes/Tutorial3.unity
+    guid: 2419cc484d2fe8c4b8d0b22a796f94ca
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 80e8fe15fb83a4c02926500c0fb0a9c5
   - enabled: 0
@@ -29,7 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneWin.unity
     guid: aad236dcb04114a2db2eb8ab66406f6d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SceneLose.unity
     guid: 36aff8d849c0a458aa3f63aab9c697ae
   m_configObjects: {}

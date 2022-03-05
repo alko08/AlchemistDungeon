@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MoveAnim : MonoBehaviour
 {
@@ -8,10 +9,12 @@ public class MoveAnim : MonoBehaviour
     public Transform movePoint;
     public LayerMask whatStopsMovement;
     public LayerMask slime;
+    public LayerMask hole;
     public Animator anim;
     private bool moving;
     private bool sliding;
     private bool hitWall;
+    public bool canMove = true;
     
     
     // Start is called before the first frame update
@@ -35,7 +38,7 @@ public class MoveAnim : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, 
                              movePoint.position, moveSpeed * Time.deltaTime);
                              
-        if (Vector3.Distance(transform.position, movePoint.position) <= .05f) {
+        if (canMove && Vector3.Distance(transform.position, movePoint.position) <= .05f) {
             if (hitWall) {
                 FindObjectOfType<AudioManager>().Play("Thud");
                 hitWall = false;
@@ -54,7 +57,7 @@ public class MoveAnim : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                     // Debug.Log("Horizontal");
-                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime)) {
+                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) && !Physics2D.OverlapCircle(movePoint.position, 0f, hole)) {
                         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                             movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                             sliding = true;
@@ -73,7 +76,7 @@ public class MoveAnim : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                     movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                     // Debug.Log("Vertical");
-                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime)) {
+                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) && !Physics2D.OverlapCircle(movePoint.position, 0f, hole)) {
                         if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                             movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                             sliding = true;
@@ -88,7 +91,7 @@ public class MoveAnim : MonoBehaviour
                 }
                 
             }
-        } else { // Animate Movement
+        } else if (canMove) { // Animate Movement
             moving = true;
             // Debug.Log(Vector3.Distance(transform.position, movePoint.position));
             anim.SetBool("Slide", sliding);
@@ -117,5 +120,14 @@ public class MoveAnim : MonoBehaviour
                 anim.SetBool("Left", false);
             }
         }
+    }
+
+    public void deathTween() {
+        canMove = false;
+        LeanTween.scale(gameObject, new Vector3(0,0,0), 0.5f).setOnComplete(destroyMe);
+    }
+    void destroyMe() {
+        SceneManager.LoadScene("SceneLose");
+        Destroy(gameObject);
     }
 }

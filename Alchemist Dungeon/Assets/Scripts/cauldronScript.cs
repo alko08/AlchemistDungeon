@@ -50,7 +50,7 @@ public class cauldronScript : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
-        // Debug.Log("OnCollisionExit2D");
+        Debug.Log("OnCollisionExit2D");
         if(col.gameObject.tag == "Player"){
             touchingPlayer = false;
         }
