@@ -54,7 +54,7 @@ public class GameInventory : MonoBehaviour {
 
             InventoryDisplay();
 
-            // door = GameObject.FindWithTag("Door").GetComponent<DoorExit>();
+            door = GameObject.FindWithTag("Door").GetComponent<DoorExit>();
       }
 
       void InventoryDisplay(){

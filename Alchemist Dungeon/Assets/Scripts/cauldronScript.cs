@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class cauldronScript : MonoBehaviour
 {
-    private GameController gameHandler;
+    // private GameController gameHandler;
     private GameInventory inventory;
+    public bool touchingPlayer = false;
 
     void Start()
     {
         // Finding the inventory GameController.
-        gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameController>();
+        // gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameController>();
         
         // Finding the inventory script contained by the GameController.
         inventory = GameObject.FindWithTag("GameHandler").GetComponent<GameInventory>();
@@ -39,33 +40,34 @@ public class cauldronScript : MonoBehaviour
     //         inventory.Craft4();
     //     }
     // }
-
-    // Note: Player can perform the following function while sliding past the
-    // cauldron. They technically don't even need to be facing it. As long as
-    // the key input is detected while the player is in the hitbox, the potion
-    // will be crafted.
-    public void OnTriggerStay2D(Collider2D other)
+    void OnCollisionEnter2D(Collision2D col)
     {
-        // If [E] key is pressed, cauldron activates.
-        if (Input.GetKeyDown("e"))
-        {
-            if (other.gameObject.tag == "Player" && inventory.canCraft1 == true
-        && inventory.recipeNum == 1)
-        {
-            inventory.Craft1();
-        } else if (other.gameObject.tag == "Player" && inventory.canCraft2 == true
-        && inventory.recipeNum == 2)
-        {
-            inventory.Craft2();
-        } else if (other.gameObject.tag == "Player" && inventory.canCraft3 == true
-        && inventory.recipeNum == 3)
-        {
-            inventory.Craft3();
-        } else if (other.gameObject.tag == "Player" && inventory.canCraft4 == true
-        && inventory.recipeNum == 4)
-        {
-            inventory.Craft4();
+        Debug.Log("OnCollisionEnter2D");
+        if(col.gameObject.tag == "Player"){
+            touchingPlayer = true;
         }
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionExit2D");
+        if(col.gameObject.tag == "Player"){
+            touchingPlayer = false;
+        }
+    }
+
+    void Update() {
+        // If [E] key is pressed, cauldron activates.
+        if (touchingPlayer && Input.GetKeyDown(KeyCode.E)) {
+            if (inventory.canCraft1 == true && inventory.recipeNum == 1) {
+                inventory.Craft1();
+            } else if (inventory.canCraft2 == true && inventory.recipeNum == 2) {
+                inventory.Craft2();
+            } else if (inventory.canCraft3 == true && inventory.recipeNum == 3) {
+                inventory.Craft3();
+            } else if (inventory.canCraft4 == true && inventory.recipeNum == 4) {
+                inventory.Craft4();
+            }
         }
     }
 }
