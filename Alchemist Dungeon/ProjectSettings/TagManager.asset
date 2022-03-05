@@ -4,14 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - item
   - PauseMenuSlider
   - GameHandler
-  - Slime
-  - Door
   - PauseMenu
   - highlighted
-  - Holes
   - PlayerController
   layers:
   - Default
@@ -20,11 +16,11 @@ TagManager:
   - 
   - Water
   - UI
-  - Hole
+  - 
   - 
   - StopMovement
   - Slime
-  - Player
+  - 
   - 
   - 
   - 

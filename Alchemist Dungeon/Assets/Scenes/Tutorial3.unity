@@ -1062,9 +1062,9 @@ GameObject:
   - component: {fileID: 622700931}
   - component: {fileID: 622700930}
   - component: {fileID: 622700933}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: hole
-  m_TagString: Holes
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1485,7 +1485,7 @@ GameObject:
   - component: {fileID: 913929004}
   m_Layer: 9
   m_Name: slime
-  m_TagString: Slime
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4495390910846264714}
   - component: {fileID: 4631038426120140584}
   - component: {fileID: 849135606686414774}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: playerArt2
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5365207893607829493}
   - component: {fileID: 5365207893607829488}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Player
   m_TagString: PlayerController
   m_Icon: {fileID: 0}
@@ -205,7 +205,11 @@ MonoBehaviour:
   slime:
     serializedVersion: 2
     m_Bits: 512
+  hole:
+    serializedVersion: 2
+    m_Bits: 0
   anim: {fileID: 4495390910846264714}
+  canMove: 1
 --- !u!1 &5365207894779394724
 GameObject:
   m_ObjectHideFlags: 0
