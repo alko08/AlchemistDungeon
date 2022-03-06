@@ -9,6 +9,13 @@ TagManager:
   - PauseMenu
   - highlighted
   - PlayerController
+  - Door
+  - toggle2
+  - toggle1
+  - toggle3
+  - toggle4
+  - toggle5
+  - toggle6
   layers:
   - Default
   - TransparentFX
