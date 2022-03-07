@@ -5081,7 +5081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5964407775037459354, guid: 9b9ce81a33979014683b8ad070b1f73d, type: 3}
       propertyPath: canExit
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5964407775037459354, guid: 9b9ce81a33979014683b8ad070b1f73d, type: 3}
       propertyPath: OpenDoor
@@ -5093,7 +5093,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5964407775037459355, guid: 9b9ce81a33979014683b8ad070b1f73d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5964407775037459355, guid: 9b9ce81a33979014683b8ad070b1f73d, type: 3}
       propertyPath: m_LocalPosition.x
