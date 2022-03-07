@@ -61,12 +61,16 @@ public class cauldronScript : MonoBehaviour
         if (touchingPlayer && Input.GetKeyDown(KeyCode.E)) {
             if (inventory.canCraft1 == true && inventory.recipeNum == 1) {
                 inventory.Craft1();
+                FindObjectOfType<AudioManager>().Play("Bubbles");
             } else if (inventory.canCraft2 == true && inventory.recipeNum == 2) {
                 inventory.Craft2();
+                FindObjectOfType<AudioManager>().Play("Bubbles");
             } else if (inventory.canCraft3 == true && inventory.recipeNum == 3) {
                 inventory.Craft3();
+                FindObjectOfType<AudioManager>().Play("Bubbles");
             } else if (inventory.canCraft4 == true && inventory.recipeNum == 4) {
                 inventory.Craft4();
+                FindObjectOfType<AudioManager>().Play("Bubbles");
             }
         }
     }
