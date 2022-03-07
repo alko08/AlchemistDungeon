@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class switchScript : MonoBehaviour
 {
-    private GameObject toggleCol1;
-    private GameObject toggleFore1;
-    private GameObject toggleSwitch1;
-    private GameObject toggleCol2;
-    private GameObject toggleSwitch2;
-    private GameObject toggleFore2;
+    public GameObject toggleCol1;
+    public GameObject toggleFore1;
+    public GameObject toggleSwitch1;
+    public GameObject toggleCol2;
+    public GameObject toggleSwitch2;
+    public GameObject toggleFore2;
     private bool oneActive = true;
     private bool touchingPlayer = false;
     
@@ -18,14 +18,14 @@ public class switchScript : MonoBehaviour
     // them like this for now.
     void Start()
     {
-        toggleCol1 = GameObject.FindWithTag("toggle1");
-        toggleCol2 = GameObject.FindWithTag("toggle2");
+        // toggleCol1 = GameObject.FindWithTag("toggle1");
+        // toggleCol2 = GameObject.FindWithTag("toggle2");
 
-        toggleFore1 = GameObject.FindWithTag("toggle3");
-        toggleFore2 = GameObject.FindWithTag("toggle4");
+        // toggleFore1 = GameObject.FindWithTag("toggle3");
+        // toggleFore2 = GameObject.FindWithTag("toggle4");
 
-        toggleSwitch1 = GameObject.FindWithTag("toggle5");
-        toggleSwitch2 = GameObject.FindWithTag("toggle6");
+        // toggleSwitch1 = GameObject.FindWithTag("toggle5");
+        // toggleSwitch2 = GameObject.FindWithTag("toggle6");
 
         toggleCol2.SetActive(false);
         toggleFore2.SetActive(false);
