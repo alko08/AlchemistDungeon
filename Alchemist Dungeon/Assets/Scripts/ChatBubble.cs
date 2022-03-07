@@ -29,6 +29,8 @@ public class ChatBubble : MonoBehaviour
             StartCoroutine(Tutorial2Coroutine());
         } else if (SceneManager.GetActiveScene().name == "Tutorial2.5") {
             StartCoroutine(Tutorial3Coroutine());
+        } else if (SceneManager.GetActiveScene().name == "Tutorial1.5") {
+            StartCoroutine(Tutorial4Coroutine());
         }
         
     }
@@ -72,16 +74,24 @@ public class ChatBubble : MonoBehaviour
 
     IEnumerator Tutorial2Coroutine() {
         yield return new WaitForSeconds(.5f);
-        Setup("I got to make a potion to clean up this mess...");
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
-        Setup("Collect every ingredient and then use the cauldron!");
-        yield return new WaitForSeconds(.5f);
+        Setup("What a mess...");
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         Destroy(gameObject);
     }
+
     IEnumerator Tutorial3Coroutine() {
         yield return new WaitForSeconds(.5f);
         Setup("Watch out for those holes!");
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Destroy(gameObject);
+    }
+
+    IEnumerator Tutorial4Coroutine() {
+        yield return new WaitForSeconds(.5f);
+        Setup("I have to make some potions for the slimes.");
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Setup("Collect every ingredient and then use the cauldron!");
+        yield return new WaitForSeconds(.5f);
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         Destroy(gameObject);
     }
