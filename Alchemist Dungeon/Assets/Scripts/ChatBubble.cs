@@ -101,6 +101,9 @@ public class ChatBubble : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         Setup("This is it. Be careful.");
         yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        Setup("I need to brew the ultimate potion!");
+        yield return new WaitForSeconds(.5f);
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
         Destroy(gameObject);
     }
 
