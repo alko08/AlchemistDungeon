@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class DoorExit : MonoBehaviour
 {
     public bool canExit = false;
-    public LayerMask Player;
     public GameObject OpenDoor;
     public GameObject ClosedDoor;
     // private GameObject slime;
