@@ -62,3 +62,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Bubbles
+    clip: {fileID: 8300000, guid: 07c9485ac6c9d4184b09d779baa2faf8, type: 3}
+    volume: 0.71
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorOpen
+    clip: {fileID: 8300000, guid: 4a7e78a4616f44a2f95531449664e66e, type: 3}
+    volume: 0.743
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

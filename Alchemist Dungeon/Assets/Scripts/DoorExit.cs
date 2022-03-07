@@ -35,9 +35,15 @@ public class DoorExit : MonoBehaviour
     }
 
     public void EnableExit() {
+        StartCoroutine(WaitForDoor());
+        // slime.SetActive(false);
+    }
+    
+    IEnumerator WaitForDoor() {
+        yield return new WaitForSeconds(.8f);
         canExit = true;
         OpenDoor.SetActive(true);
         ClosedDoor.SetActive(false);
-        // slime.SetActive(false);
+        FindObjectOfType<AudioManager>().Play("DoorOpen");
     }
 }
