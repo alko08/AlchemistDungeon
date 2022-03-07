@@ -609,7 +609,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8657225345206865505, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8657225345206865505, guid: ad0cd203eff44f343bd6257bac536bd5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -662,7 +662,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: canCraft3
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: recipeNum
@@ -671,31 +671,31 @@ PrefabInstance:
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: item1image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418679}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: item2image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418678}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: item3image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418677}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: item4image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418676}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: item5image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418675}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: item6image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418680}
     - target: {fileID: 2139269889599123540, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: potion1image
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 985418681}
     - target: {fileID: 4126214505167046166, guid: 43d5d51cd9e334051a81b9a39b0d9e31, type: 3}
       propertyPath: m_Name
       value: InventoryHandler
@@ -7718,6 +7718,41 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+--- !u!1 &985418675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6058694312456920827, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985418676 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2016679312568125631, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985418677 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4009305407821410577, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985418678 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3651040523431495111, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985418679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725013076236416426, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985418680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4494139695358673525, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &985418681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5166272653067306727, guid: 9fb6a78a74f844af59ef2df8911d8082, type: 3}
+  m_PrefabInstance: {fileID: 985418674}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1003906465
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7849,7 +7884,7 @@ PrefabInstance:
       objectReference: {fileID: 1348989989200827155, guid: a71f07363d88d4d2b91b7ec05f64c25c, type: 3}
     - target: {fileID: 8666596330776346820, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: ItemName
-      value: item6
+      value: item5
       objectReference: {fileID: 0}
     - target: {fileID: 8666596330776346821, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: m_Name
@@ -7975,7 +8010,7 @@ PrefabInstance:
       objectReference: {fileID: 3383285079810032396, guid: a71f07363d88d4d2b91b7ec05f64c25c, type: 3}
     - target: {fileID: 8666596330776346820, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: ItemName
-      value: item5
+      value: item4
       objectReference: {fileID: 0}
     - target: {fileID: 8666596330776346821, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: m_Name
@@ -8044,7 +8079,7 @@ PrefabInstance:
       objectReference: {fileID: 8905161326638005592, guid: a71f07363d88d4d2b91b7ec05f64c25c, type: 3}
     - target: {fileID: 8666596330776346820, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: ItemName
-      value: item3
+      value: item2
       objectReference: {fileID: 0}
     - target: {fileID: 8666596330776346821, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: m_Name
@@ -8113,7 +8148,7 @@ PrefabInstance:
       objectReference: {fileID: -7037018473134804373, guid: a71f07363d88d4d2b91b7ec05f64c25c, type: 3}
     - target: {fileID: 8666596330776346820, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: ItemName
-      value: item2
+      value: item1
       objectReference: {fileID: 0}
     - target: {fileID: 8666596330776346821, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: m_Name
@@ -10310,7 +10345,7 @@ PrefabInstance:
       objectReference: {fileID: -2853532882818018882, guid: a71f07363d88d4d2b91b7ec05f64c25c, type: 3}
     - target: {fileID: 8666596330776346820, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: ItemName
-      value: item4
+      value: item3
       objectReference: {fileID: 0}
     - target: {fileID: 8666596330776346821, guid: 7e37295c3d1be4fbdac720a51e9957dd, type: 3}
       propertyPath: m_Name
