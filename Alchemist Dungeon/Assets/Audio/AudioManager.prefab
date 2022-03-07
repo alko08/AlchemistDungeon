@@ -62,3 +62,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Bubbles
+    clip: {fileID: 8300000, guid: 07c9485ac6c9d4184b09d779baa2faf8, type: 3}
+    volume: 0.71
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
