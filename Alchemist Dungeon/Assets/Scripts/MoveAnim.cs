@@ -13,7 +13,7 @@ public class MoveAnim : MonoBehaviour
     private bool moving;
     private bool sliding;
     private bool hitWall;
-    public bool canMove = true;
+    public bool canMove;
     
     
     // Start is called before the first frame update
@@ -29,6 +29,7 @@ public class MoveAnim : MonoBehaviour
         moving = false;
         sliding = false;
         hitWall = false;
+        canMove = true;
     }
 
     // Update is called once per frame
