@@ -9,7 +9,6 @@ public class MoveAnim : MonoBehaviour
     public Transform movePoint;
     public LayerMask whatStopsMovement;
     public LayerMask slime;
-    public LayerMask hole;
     public Animator anim;
     private bool moving;
     private bool sliding;
@@ -57,7 +56,7 @@ public class MoveAnim : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                     movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                     // Debug.Log("Horizontal");
-                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) && !Physics2D.OverlapCircle(movePoint.position, 0f, hole)) {
+                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime)) {
                         if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f), 0f, whatStopsMovement)) {
                             movePoint.position += new Vector3(Input.GetAxisRaw("Horizontal"), 0f, 0f);
                             sliding = true;
@@ -76,7 +75,7 @@ public class MoveAnim : MonoBehaviour
                 if (!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                     movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                     // Debug.Log("Vertical");
-                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime) && !Physics2D.OverlapCircle(movePoint.position, 0f, hole)) {
+                    while (Physics2D.OverlapCircle(movePoint.position, 0f, slime)) {
                         if(!Physics2D.OverlapCircle(movePoint.position + new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f), 0f, whatStopsMovement)) {
                             movePoint.position += new Vector3(0f, Input.GetAxisRaw("Vertical"), 0f);
                             sliding = true;
