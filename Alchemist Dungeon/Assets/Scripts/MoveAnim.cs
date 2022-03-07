@@ -29,7 +29,6 @@ public class MoveAnim : MonoBehaviour
         moving = false;
         sliding = false;
         hitWall = false;
-        canMove = true;
     }
 
     // Update is called once per frame
