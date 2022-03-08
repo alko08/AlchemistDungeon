@@ -42,14 +42,14 @@ public class GameController : MonoBehaviour
         }
     }
 
-    void Awake (){
-        SetLevel (volumeLevel);
-        GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
-        if (sliderTemp != null){
-            sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-            sliderVolumeCtrl.value = volumeLevel;
-        }
-    }
+    // void Awake (){
+    //     SetLevel (volumeLevel);
+    //     GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+    //     if (sliderTemp != null){
+    //         sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+    //         sliderVolumeCtrl.value = volumeLevel;
+    //     }
+    // }
 
     void Pause(){
         pauseMenuUI.SetActive(true);
@@ -63,11 +63,11 @@ public class GameController : MonoBehaviour
         GameisPaused = false;
     }
 
-    public void SetLevel (float sliderValue){
-        mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
-        volumeLevel = sliderValue;
-        // Debug.Log(volumeLevel);
-    }
+    // public void SetLevel (float sliderValue){
+    //     mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+    //     volumeLevel = sliderValue;
+    //     // Debug.Log(volumeLevel);
+    // }
 
     public void StartGame() {
         SceneManager.LoadScene("Tutorial0");

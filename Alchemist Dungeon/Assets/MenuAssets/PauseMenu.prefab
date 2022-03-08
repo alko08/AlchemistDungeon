@@ -809,6 +809,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResumeButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5934875430840195975, guid: 6d6b2dce9cf5ddf4b88bda434c51c817, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3048371696874760319, guid: 67192748e536d924182cf9f1cb6e74b8, type: 3}
+    - target: {fileID: 5934875430840195975, guid: 6d6b2dce9cf5ddf4b88bda434c51c817, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d6b2dce9cf5ddf4b88bda434c51c817, type: 3}
 --- !u!224 &3556967923587526401 stripped
