@@ -8,6 +8,7 @@ public class WinMusic : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Pause("Theme");
+        FindObjectOfType<AudioManager>().Pause("BossTheme");
         FindObjectOfType<AudioManager>().Play("WinSound");
     }
 
