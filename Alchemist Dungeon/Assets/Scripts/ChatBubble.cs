@@ -11,7 +11,7 @@ public class ChatBubble : MonoBehaviour
     public GameObject text;
     public GameObject background;
     public GameObject EButton;
-    private bool showE = true;
+    private bool showE;
 
     private void Awake() {
         backgroundSpriteRenderer = transform.Find("Background").GetComponent<SpriteRenderer>();
@@ -19,6 +19,7 @@ public class ChatBubble : MonoBehaviour
     }
 
     private void Start() {
+        showE = true;
         Setup("hi");
         Hide();
         if (SceneManager.GetActiveScene().name == "Tutorial0") {

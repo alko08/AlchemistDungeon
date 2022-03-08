@@ -41,31 +41,30 @@ public class GameInventory : MonoBehaviour {
     //   public GameObject coinText;
 
       void Start(){
+            item1bool = false;
+            item2bool = false;
+            item3bool = false;
+            item4bool = false;
+            item5bool = false;
+            item6bool = false;
+            potion1bool = false;
+
             // InventoryMenu.SetActive(true);
-            item1image.SetActive(false);
-            item2image.SetActive(false);
-            item3image.SetActive(false);
-            item4image.SetActive(false);
-            item5image.SetActive(false);
-            item6image.SetActive(false);
-
-            potion1image.SetActive(false);
             CantCraft();
-
             InventoryDisplay();
 
             door = GameObject.FindWithTag("Door").GetComponent<DoorExit>();
       }
 
       void InventoryDisplay(){
-            if (item1bool == true) {item1image.SetActive(true);} else {item1image.SetActive(false);}
-            if (item2bool == true) {item2image.SetActive(true);} else {item2image.SetActive(false);}
-            if (item3bool == true) {item3image.SetActive(true);} else {item3image.SetActive(false);}
-            if (item4bool == true) {item4image.SetActive(true);} else {item4image.SetActive(false);}
-            if (item5bool == true) {item5image.SetActive(true);} else {item5image.SetActive(false);}
-            if (item6bool == true) {item6image.SetActive(true);} else {item6image.SetActive(false);}
+            item1image.SetActive(item1bool);
+            item2image.SetActive(item2bool);
+            item3image.SetActive(item3bool);
+            item4image.SetActive(item4bool);
+            item5image.SetActive(item5bool);
+            item6image.SetActive(item6bool);
 
-            if (potion1bool == true) {potion1image.SetActive(true);} else {potion1image.SetActive(false);}
+            potion1image.SetActive(potion1bool);
             // Text coinTextB = coinText.GetComponent<Text>();
             // coinTextB.text = ("COINS: " + coins);
       }
