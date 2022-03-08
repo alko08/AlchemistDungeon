@@ -8,7 +8,6 @@ public class AudioManager : MonoBehaviour
     
     public static AudioManager instance;
     
-    // Start is called before the first frame update
     void Awake()
     {
         if (instance == null)
@@ -37,7 +36,6 @@ public class AudioManager : MonoBehaviour
         Play("Theme");
     }
 
-    // Update is called once per frame
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -50,5 +48,30 @@ public class AudioManager : MonoBehaviour
             return;
         
         s.source.Play();
+    }
+    
+    public void Pause(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        
+        if (s == null) {
+            Debug.LogWarning("Sound: " + name + " not found!");
+            return;
+        }
+        
+        if (!s.source.isPlaying)
+            return;
+        
+        s.source.Pause();
+    }
+    
+    public bool isPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        
+        if (s.source.isPlaying)
+            return true;
+        else 
+            return false;
     }
 }
