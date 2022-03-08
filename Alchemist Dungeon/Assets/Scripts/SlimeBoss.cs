@@ -105,7 +105,7 @@ public class SlimeBoss : MonoBehaviour
         Vector3 temp2 = slimePoint.position;
         yield return new WaitForSeconds(1f);
         shake = true;
-        // ROAR!!!!!!!!!!!!!!!!!!
+        FindObjectOfType<AudioManager>().Play("ROAR");
         yield return new WaitForSeconds(4f);
         shake = false;
         happy = true;
