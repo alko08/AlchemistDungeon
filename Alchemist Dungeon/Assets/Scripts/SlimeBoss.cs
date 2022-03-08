@@ -103,10 +103,11 @@ public class SlimeBoss : MonoBehaviour
 
     IEnumerator endCoroutine() {
         Vector3 temp2 = slimePoint.position;
-        yield return new WaitForSeconds(1f);
-        shake = true;
+        yield return new WaitForSeconds(.5f);
         FindObjectOfType<AudioManager>().Play("ROAR");
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(.5f);
+        shake = true;        
+        yield return new WaitForSeconds(2.5f);
         shake = false;
         happy = true;
         surpised = false;
