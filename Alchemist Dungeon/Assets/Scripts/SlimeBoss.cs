@@ -212,8 +212,8 @@ public class SlimeBoss : MonoBehaviour
         happy = true;
         shake = false;
         animateFunc();
-        FindObjectOfType<AudioManager>().Play("WinSound");
-        yield return new WaitForSeconds(2f);
+        // FindObjectOfType<AudioManager>().Play("WinSound");
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("SceneWin");
     }
 

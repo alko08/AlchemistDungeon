@@ -72,10 +72,6 @@ public class GameController : MonoBehaviour
     public void StartGame() {
         SceneManager.LoadScene("Tutorial0");
     }
-    
-    public void PlayLevel1() {
-        SceneManager.LoadScene("Level1");
-    }
 
     public void RestartGame() {
         Time.timeScale = 1f;
@@ -92,6 +88,38 @@ public class GameController : MonoBehaviour
 
     public void ReplayGame (){
         SceneManager.LoadScene(SceneDied);
+    }
+
+    public void LevelSelect (){
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void PlayLevel1() {
+        SceneManager.LoadScene("Tutorial2");
+    }
+    public void PlayLevel2() {
+        SceneManager.LoadScene("Tutorial2.5");
+    }
+    public void PlayLevel3() {
+        SceneManager.LoadScene("Level1");
+    }
+    public void PlayLevel4() {
+        SceneManager.LoadScene("Level2");
+    }
+    public void PlayLevel5() {
+        SceneManager.LoadScene("Level3");
+    }
+    public void PlayLevel6() {
+        SceneManager.LoadScene("Tutorial3.5");
+    }
+    public void PlayLevel7() {
+        SceneManager.LoadScene("Tutorial4");
+    }
+    public void PlayLevel8() {
+        SceneManager.LoadScene("holes_and_switches");
+    }
+    public void PlayLevel9() {
+        SceneManager.LoadScene("BossFight0");
     }
 
     // public void AddScore (int newScoreValue) {
