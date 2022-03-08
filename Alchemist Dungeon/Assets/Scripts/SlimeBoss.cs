@@ -200,7 +200,7 @@ public class SlimeBoss : MonoBehaviour
         shake = true;
         FindObjectOfType<AudioManager>().Play("LongSquish");
         StartCoroutine(roarCoroutine());
-        LeanTween.scale(gameObject, new Vector3(.143f,.143f,.143f), 5f).setOnComplete(destroyMe);
+        LeanTween.scale(gameObject, new Vector3(.143f,.143f,.143f), 4f).setOnComplete(destroyMe);
         animateFunc();
     }
 
@@ -212,7 +212,7 @@ public class SlimeBoss : MonoBehaviour
         happy = true;
         shake = false;
         animateFunc();
-        // FindObjectOfType<AudioManager>().Play("Win");
+        FindObjectOfType<AudioManager>().Play("WinSound");
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("SceneWin");
     }

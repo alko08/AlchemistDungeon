@@ -88,13 +88,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: WinSound
     clip: {fileID: 8300000, guid: e83536f7a6a6c55489431ac4e89d264b, type: 3}
-    volume: 0.743
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: LoseSound
     clip: {fileID: 8300000, guid: 88018693743d8487d863ae92b2ef55f8, type: 3}
-    volume: 0.743
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
