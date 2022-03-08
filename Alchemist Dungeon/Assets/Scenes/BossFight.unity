@@ -1336,6 +1336,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2533618030371757074, guid: 109533fa3da4b4a378f26b50d306436c, type: 3}
+      propertyPath: sounds.Array.data[12].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2533618030371757074, guid: 109533fa3da4b4a378f26b50d306436c, type: 3}
+      propertyPath: sounds.Array.data[12].pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2533618030371757075, guid: 109533fa3da4b4a378f26b50d306436c, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -19480,6 +19488,49 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 4495390910846264714, guid: e32df3ad8ad5ab54c9e9a4f9af746459, type: 3}
   m_PrefabInstance: {fileID: 1507869263}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1655267396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1655267398}
+  - component: {fileID: 1655267397}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1655267397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655267396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f999c9a3b72fb4e428df7d97c6bc2803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1655267398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655267396}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.0040351, y: 0.31409222, z: -182.03253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1668770292 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5365207893607829489, guid: e32df3ad8ad5ab54c9e9a4f9af746459, type: 3}
