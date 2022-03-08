@@ -71,6 +71,9 @@ public class cauldronScript : MonoBehaviour
             } else if (inventory.canCraft4 == true && inventory.recipeNum == 4) {
                 inventory.Craft4();
                 FindObjectOfType<AudioManager>().Play("Bubbles");
+            } else if (inventory.canCraft5 == true && inventory.recipeNum == 5) {
+                inventory.Craft5();
+                FindObjectOfType<AudioManager>().Play("Bubbles");
             }
         }
     }

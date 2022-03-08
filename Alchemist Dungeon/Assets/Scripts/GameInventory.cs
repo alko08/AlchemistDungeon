@@ -8,12 +8,12 @@ public class GameInventory : MonoBehaviour {
       //6 Inventory Items:
       // public GameObject InventoryMenu;
 
-      public static bool item1bool = false;
-      public static bool item2bool = false;
-      public static bool item3bool = false;
-      public static bool item4bool = false;
-      public static bool item5bool = false;
-      public static bool item6bool = false;
+      public bool item1bool = false;
+      public bool item2bool = false;
+      public bool item3bool = false;
+      public bool item4bool = false;
+      public bool item5bool = false;
+      public bool item6bool = false;
 
       public static bool potion1bool = false;
       
@@ -33,6 +33,7 @@ public class GameInventory : MonoBehaviour {
       public bool canCraft2;
       public bool canCraft3;
       public bool canCraft4;
+      public bool canCraft5;
       public int recipeNum = 1;
 
       // Enable Next Level
@@ -80,18 +81,11 @@ public class GameInventory : MonoBehaviour {
             InventoryDisplay();
 
             // Updating canCraft bools
-            if (item1bool && item2bool && item3bool) {
-                  canCraft1 = true;
-            }
-            if (canCraft1 && item4bool) {
-                  canCraft2 = true;
-            }
-            if (canCraft2 && item5bool) {
-                  canCraft3 = true;
-            }
-            if (canCraft3 && item6bool) {
-                  canCraft4 = true;
-            }
+            canCraft1 = item1bool && item2bool && item3bool;
+            canCraft2 =canCraft1 && item4bool;
+            canCraft3 = canCraft2 && item5bool;
+            canCraft4 = canCraft3 && item6bool;
+            canCraft5 = canCraft4 && recipeNum == 5;
       }
 
       public void InventoryRemove(string item){
@@ -103,6 +97,13 @@ public class GameInventory : MonoBehaviour {
             else if (itemRemove == "item5") {item5bool =false;}
             else if (itemRemove == "item6") {item5bool =false;}
             InventoryDisplay();
+
+            // Updating canCraft bools
+            canCraft1 = item1bool && item2bool && item3bool;
+            canCraft2 = canCraft1 && item4bool;
+            canCraft3 = canCraft2 && item5bool;
+            canCraft4 = canCraft3 && item6bool;
+            canCraft5 = canCraft4 && recipeNum == 5;
       }
 
     //   public void CoinChange(int amount){
@@ -115,6 +116,7 @@ public class GameInventory : MonoBehaviour {
             canCraft2 = false;
             canCraft3 = false;
             canCraft4 = false;
+            canCraft5 = false;
     }
 
     public void Craft1()
@@ -195,5 +197,28 @@ public class GameInventory : MonoBehaviour {
             InventoryDisplay();
 
             door.EnableExit();
+    }
+
+    public void Craft5()
+    {
+            item1bool = false;
+            item2bool = false;
+            item3bool = false;
+            item4bool = false;
+            item5bool = false;
+            item6bool = false;
+
+            item1image.SetActive(false);
+            item2image.SetActive(false);
+            item3image.SetActive(false);
+            item4image.SetActive(false);
+            item5image.SetActive(false);
+            item6image.SetActive(false);
+
+            potion1bool = true;
+            CantCraft();
+            InventoryDisplay();
+
+            door.ThrowPotion();
     }
 }

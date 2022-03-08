@@ -8,6 +8,7 @@ public class SlimeCombine : MonoBehaviour
     private float moveSpeed = 4f;
     private bool moving;
     
+
     // Start is called before the first frame update
     void Start()
     {

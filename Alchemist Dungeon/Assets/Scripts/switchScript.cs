@@ -54,7 +54,7 @@ public class switchScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        Debug.Log("Switch touched");
+        // Debug.Log("Switch touched");
         
         if(col.gameObject.tag == "Player"){
             touchingPlayer = true;
@@ -63,7 +63,7 @@ public class switchScript : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
-        Debug.Log("Switch untouched");
+        // Debug.Log("Switch untouched");
         
         if(col.gameObject.tag == "Player"){
             touchingPlayer = false;

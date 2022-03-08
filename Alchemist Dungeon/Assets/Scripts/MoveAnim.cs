@@ -10,9 +10,7 @@ public class MoveAnim : MonoBehaviour
     public LayerMask whatStopsMovement;
     public LayerMask slime;
     public Animator anim;
-    private bool moving;
-    private bool sliding;
-    private bool hitWall;
+    private bool moving, sliding, hitWall, spining;
     public bool canMove;
     
     
@@ -29,6 +27,7 @@ public class MoveAnim : MonoBehaviour
         moving = false;
         sliding = false;
         hitWall = false;
+        spining = false;
     }
 
     // Update is called once per frame
@@ -95,6 +94,7 @@ public class MoveAnim : MonoBehaviour
             // Debug.Log(Vector3.Distance(transform.position, movePoint.position));
             anim.SetBool("Slide", sliding);
             anim.SetBool("Walk", true);
+            anim.SetBool("Spin", spining);
 
             // Debug.Log("Walk");
             if(Input.GetAxisRaw("Horizontal") > 0f) {
@@ -128,5 +128,17 @@ public class MoveAnim : MonoBehaviour
     void destroyMe() {
         SceneManager.LoadScene("SceneLose");
         Destroy(gameObject);
+    }
+    public void spin() {
+        spining = true;
+        canMove = false;
+        anim.SetBool("Spin", spining);
+        StartCoroutine(stopSpinning());
+    }
+
+    IEnumerator stopSpinning() {
+        yield return new WaitForSeconds(1f);
+        canMove = true;
+        spining = false;
     }
 }

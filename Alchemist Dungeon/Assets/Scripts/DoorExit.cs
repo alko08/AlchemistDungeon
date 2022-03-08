@@ -8,6 +8,7 @@ public class DoorExit : MonoBehaviour
     public bool canExit = false;
     public GameObject OpenDoor;
     public GameObject ClosedDoor;
+    public GameObject potion;
     // private GameObject slime;
 
     void Start()
@@ -45,5 +46,9 @@ public class DoorExit : MonoBehaviour
         OpenDoor.SetActive(true);
         ClosedDoor.SetActive(false);
         FindObjectOfType<AudioManager>().Play("DoorOpen");
+    }
+
+    public void ThrowPotion() {
+        potion.SetActive(true);
     }
 }

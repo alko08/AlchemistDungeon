@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SlimeBoss : MonoBehaviour
 {
     private bool happy, angryShake, surpised, fight, left, shake, centerLook,
-        leftDown, leftUp, rightDown, rightUp, angry;
+        leftDown, leftUp, rightDown, rightUp, angry, shooting;
     public Animator anim;
     private float moveSpeed = 1f;
     public Transform movePoint;
@@ -13,6 +14,11 @@ public class SlimeBoss : MonoBehaviour
     public GameObject slime;
     private Vector3 start;
     private MoveAnim playerScript; 
+    public GameObject playerArt;
+    public GameObject playerMove;
+    public GameObject slimeClone;
+    private GameObject clone;
+    private GameObject clone2;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +39,7 @@ public class SlimeBoss : MonoBehaviour
         rightDown = false;
         centerLook = false;
         angry = false;
+        shooting = false;
 
 
         slimePoint = slime.transform;
@@ -63,7 +70,48 @@ public class SlimeBoss : MonoBehaviour
             movePoint.position = start;
         }
 
-        // if ()
+        if (fight) {
+            if (playerArt.transform.position.x < this.transform.position.x - 4f) {
+                if (playerArt.transform.position.y < this.transform.position.y - 2f) {
+                    leftDown = true;
+                    leftUp = false;
+                } else {
+                    leftDown = false;
+                    leftUp = true;
+                }
+                rightDown = false;
+                rightUp = false;
+                centerLook = false;
+            } else if (playerArt.transform.position.x > this.transform.position.x + 4f) {
+                if (playerArt.transform.position.y < this.transform.position.y - 2f) {
+                    rightDown = true;
+                    rightUp = false;
+                } else {
+                    rightDown = false;
+                    rightUp = true;
+                }
+                leftDown = false ;
+                leftUp = false;
+                centerLook = false;
+            } else {
+                leftDown = false;
+                leftUp = false;
+                rightDown = false;
+                rightUp = false;
+                centerLook = true;
+            }
+            animateFunc();
+            if (!shooting) {
+                shooting = !shooting;
+                StartCoroutine(ShootCoroutine());
+            }
+            
+        }
+    }
+
+    bool IsLeft(Vector2 A, Vector2 B)
+    {
+        return (-A.x * B.y + A.y * B.x) < 0;
     }
 
     void animateFunc() {
@@ -123,6 +171,54 @@ public class SlimeBoss : MonoBehaviour
         angry = false;
         animateFunc();
         playerScript.canMove = true;
+        yield return new WaitForSeconds(3f);
         fight = true;
+    }
+
+    IEnumerator ShootCoroutine() {
+        Vector3 temp = playerArt.transform.position;
+        FindObjectOfType<AudioManager>().Play("SlimeLaugh");
+        // clone = Instantiate(slimeClone, this.transform.position, this.transform.rotation) as GameObject;
+        // clone.transform.parent = null;
+        // clone.SetActive(true);
+        // clone.gameObject.transform.GetChild(1).position = playerArt.transform.position;
+
+        clone2 = Instantiate(slimeClone, this.transform.position, this.transform.rotation) as GameObject;
+        clone2.transform.parent = null;
+        clone2.SetActive(true);
+        clone2.gameObject.transform.GetChild(1).position = playerMove.transform.position;
+        yield return new WaitForSeconds(Random.Range(2f, 4f));
+        shooting = !shooting;
+    }
+
+    public void stop() {
+        fight = false;
+    }
+
+    public void shrink() {
+        fight = false;
+        shake = true;
+        FindObjectOfType<AudioManager>().Play("LongSquish");
+        StartCoroutine(roarCoroutine());
+        LeanTween.scale(gameObject, new Vector3(.143f,.143f,.143f), 5f).setOnComplete(destroyMe);
+        animateFunc();
+    }
+
+    void destroyMe() {
+        StartCoroutine(destroyedCoroutine());
+    }
+
+    IEnumerator destroyedCoroutine() {
+        happy = true;
+        shake = false;
+        animateFunc();
+        // FindObjectOfType<AudioManager>().Play("Win");
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("SceneWin");
+    }
+
+    IEnumerator roarCoroutine() {
+        yield return new WaitForSeconds(2f);
+        FindObjectOfType<AudioManager>().Play("SadRoar");
     }
 }

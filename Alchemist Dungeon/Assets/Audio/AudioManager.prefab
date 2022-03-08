@@ -82,7 +82,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SlimeLaugh
     clip: {fileID: 8300000, guid: 571febfe8eabb44c29d248a4318803cd, type: 3}
-    volume: 0.743
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -96,5 +96,23 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 88018693743d8487d863ae92b2ef55f8, type: 3}
     volume: 0.743
     pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Squish
+    clip: {fileID: 8300000, guid: 7ad0385317375a141abea71d7a360886, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LongSquish
+    clip: {fileID: 8300000, guid: b52fed0037f0cbe4999f8ed58af69815, type: 3}
+    volume: 0.7
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SadRoar
+    clip: {fileID: 8300000, guid: 0555656e2c8ba44bbaa6d640e482b0c6, type: 3}
+    volume: 0.3
+    pitch: 2
     loop: 0
     source: {fileID: 0}

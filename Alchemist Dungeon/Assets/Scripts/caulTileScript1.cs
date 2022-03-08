@@ -27,10 +27,17 @@ public class caulTileScript1 : MonoBehaviour
     // If any of the recipes can be crafted, make invisible. Else, make visible.
     void Update()
     {
-        if (inventory.canCraft1 == true)
+        if (inventory.canCraft1 == true && inventory.recipeNum == 1 || 
+            inventory.canCraft2 == true && inventory.recipeNum == 2 || 
+            inventory.canCraft3 == true && inventory.recipeNum == 3 || 
+            inventory.canCraft4 == true && inventory.recipeNum == 4 || 
+            inventory.canCraft5 == true && inventory.recipeNum == 5)
         {
             this.gameObject.SetActive(false);
             glowCauldron.gameObject.SetActive(true);
+        } else {
+            this.gameObject.SetActive(true);
+            glowCauldron.gameObject.SetActive(false);
         }
     }
 }

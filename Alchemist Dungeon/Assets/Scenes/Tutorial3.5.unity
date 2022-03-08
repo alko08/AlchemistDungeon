@@ -1491,6 +1491,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 198764815786056872, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
   m_PrefabInstance: {fileID: 721874373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721874375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3719004040264919807, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
+  m_PrefabInstance: {fileID: 721874373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &721874376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4442574203297456640, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
+  m_PrefabInstance: {fileID: 721874373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &721874377 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3719004040440154027, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
+  m_PrefabInstance: {fileID: 721874373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &721874378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 454813243340503330, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
+  m_PrefabInstance: {fileID: 721874373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &721874379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3719004039378824676, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
+  m_PrefabInstance: {fileID: 721874373}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &721874380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3719004040231799272, guid: b8bb5a5bfdc6c4b1fa1e5fafd4012967, type: 3}
+  m_PrefabInstance: {fileID: 721874373}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1079665441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3003,6 +3033,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 223943937136549190, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
+      propertyPath: toggleCol1
+      value: 
+      objectReference: {fileID: 721874380}
+    - target: {fileID: 223943937136549190, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
+      propertyPath: toggleCol2
+      value: 
+      objectReference: {fileID: 721874377}
+    - target: {fileID: 223943937136549190, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
+      propertyPath: toggleFore1
+      value: 
+      objectReference: {fileID: 721874379}
+    - target: {fileID: 223943937136549190, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
+      propertyPath: toggleFore2
+      value: 
+      objectReference: {fileID: 721874375}
+    - target: {fileID: 223943937136549190, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
+      propertyPath: toggleSwitch1
+      value: 
+      objectReference: {fileID: 721874378}
+    - target: {fileID: 223943937136549190, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
+      propertyPath: toggleSwitch2
+      value: 
+      objectReference: {fileID: 721874376}
     - target: {fileID: 223943937136549191, guid: c1f3f035716646d4f8a5dc0cb66050e2, type: 3}
       propertyPath: m_RootOrder
       value: 7
