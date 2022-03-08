@@ -8,16 +8,22 @@ public class WinMusic : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Pause("Theme");
-        FindObjectOfType<AudioManager>().Pause("BossTheme");
         FindObjectOfType<AudioManager>().Play("WinSound");
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool isPlaying = FindObjectOfType<AudioManager>().isPlaying("WinSound");
+        bool bossPlaying = FindObjectOfType<AudioManager>().isPlaying("BossTheme");
+        if (bossPlaying)
+            FindObjectOfType<AudioManager>().Pause("BossTheme");
+            
+        bool themePlaying = FindObjectOfType<AudioManager>().isPlaying("Theme");    
+        if (themePlaying)
+            FindObjectOfType<AudioManager>().Pause("Theme");
         
-        if (!isPlaying)
+        bool winPlaying = FindObjectOfType<AudioManager>().isPlaying("WinSound");
+        if (!winPlaying)
             FindObjectOfType<AudioManager>().Play("Theme");
     }
 }

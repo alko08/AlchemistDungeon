@@ -119,6 +119,6 @@ MonoBehaviour:
   - name: BossTheme
     clip: {fileID: 8300000, guid: b5d22cfaefeae443aa200f3ea7ba3d91, type: 3}
     volume: 0.421
-    pitch: 2
-    loop: 0
+    pitch: 1
+    loop: 1
     source: {fileID: 0}

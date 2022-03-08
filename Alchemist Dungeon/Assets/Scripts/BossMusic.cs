@@ -7,15 +7,18 @@ public class BossMusic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("BossTheme");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        bool isPlaying = FindObjectOfType<AudioManager>().isPlaying("Theme");
+        bool bossPlaying = FindObjectOfType<AudioManager>().isPlaying("BossTheme");
+        if (!bossPlaying)
+            FindObjectOfType<AudioManager>().Play("BossTheme");
         
-        if (isPlaying)
+        bool themePlaying = FindObjectOfType<AudioManager>().isPlaying("Theme");
+        if (themePlaying)
             FindObjectOfType<AudioManager>().Pause("Theme");
     }
 }
