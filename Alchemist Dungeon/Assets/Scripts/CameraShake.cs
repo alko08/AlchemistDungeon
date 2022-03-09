@@ -24,13 +24,16 @@ public class CameraShake : MonoBehaviour
     public void Update()
     {
         if(cam.orthographicSize > 2f && zoom) {
-            cam.orthographicSize -= .001f;
-            transform.position += new Vector3(0f, .001f, 0f);
-            // Debug.Log("-.001f");
+            if (cam.orthographicSize > 5.55) {
+                cam.orthographicSize -= .01f;
+                transform.position += new Vector3(0f, .01f, 0f);
+                // Debug.Log("-.01f");
+            }
+            
         } else if(cam.orthographicSize < 9f && !pause && !shake) {
-            cam.orthographicSize += .01f;
-            transform.position -= new Vector3(0f, .01f, 0f);
-            // Debug.Log("-+.01f");
+            cam.orthographicSize += .1f;
+            transform.position -= new Vector3(0f, .1f, 0f);
+            // Debug.Log("+.1f");
         } else if (!pause && shake) {
             if (Vector3.Distance(transform.position, temp2) == 0f) {
                 if (left) {

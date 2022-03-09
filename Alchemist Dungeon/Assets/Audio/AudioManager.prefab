@@ -52,7 +52,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Thud
     clip: {fileID: 8300000, guid: 7c031ccb17419854cb949c39afcff34e, type: 3}
-    volume: 0.625
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
