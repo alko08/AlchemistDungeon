@@ -1,5 +1,5 @@
 # AlchemistDungeon
-Alchemist Dungeon created by team 8.
+Alchemist Dungeon created by team 8. A 2D Puzzle RPG.
 
 Team 8:
 Bill Xia (onionLad), Adam Bernstein (adambernst), Laura Garcia (LAGarcia01), Alexander Koppel (alko08)
